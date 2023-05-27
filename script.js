@@ -2,7 +2,6 @@
 // @name         Youtube-Loop-Between
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
 // @author       You
 // @match        https://www.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?domain=youtube.com
@@ -11,8 +10,6 @@
 
 (function() {
     'use strict';
-
-    // Your code here...
 
     let currentUrl = ""
 
@@ -26,11 +23,7 @@
 
     const extensionFunc = () => {
 
-
         currentUrl = window.location.href
-
-        console.log("extension cagrildiiii")
-
 
         const getSeconds = (timestamp) => {
             let nums = timestamp.split(":").map((n) => parseInt(n))
@@ -66,9 +59,6 @@
         let loopStart = 0
         let loopEnd = getSeconds(document.querySelector(".ytp-time-duration").textContent)
 
-
-
-
         let skipsToggle = document.createElement("div")
         skipsToggle.style.position = "absolute"
         skipsToggle.style.width = "13px"
@@ -103,9 +93,6 @@
         let parentElement = document.getElementById("info-contents")
         parentElement.style.position = "relative"
         parentElement.insertBefore(skipsToggle, parentElement.firstChild);
-
-
-
 
 
         let skipsContainer = document.createElement("div")
@@ -161,12 +148,7 @@
 
         skipsContainer.appendChild(setEndDiv)
 
-
-
         parentElement.insertBefore(skipsContainer, parentElement.firstChild);
-
-
-
 
 
         document.querySelectorAll(".skipExtension").forEach((d) => {
@@ -183,7 +165,6 @@
             d.addEventListener("mouseout", () =>  {
                 d.style.color = "#A3A3A3"
             })
-
 
         })
 
