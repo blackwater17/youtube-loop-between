@@ -180,16 +180,7 @@
             if (intervalPassedUrl != window.location.href) clearInterval(myInterval);
 
         }, 750);
-
-
-
-
     }
-
-
-
-
-
 
 
 
